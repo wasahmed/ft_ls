@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 07:33:02 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:38:49 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 14:53:39 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef	struct	s_flags_env
 	t_diratr		*lst;
 }				t_flags_env;
 
-int		checker(t_flags_env *e);
+int		check_file(t_flags_env *e);
 void    display_l(t_diratr  *lst);
 void    process_ls(char *dir, t_flags_env *env);
 void    exec(t_flags_env *entry);

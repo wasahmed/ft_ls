@@ -6,13 +6,13 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 13:43:04 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:38:32 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 14:52:43 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		checker(t_flags_env *e)
+int		check_file(t_flags_env *e)
 {
 	if ((e->stream = opendir(".")) != NULL)
 	{
