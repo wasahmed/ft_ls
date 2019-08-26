@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 14:55:26 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/24 15:12:41 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 13:39:39 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void    ls_printer(t_diratr *lst, t_flags_env flag, char *p)
     t_diratr *tmp;
 
     if (flag->l == 1)
-        display_l()//
+        display_l(lst);
     if (flag->re == 1)
         ft_putendl(ft_strjoin(p, ":"));
     if (flag->r == 1)
-        rlist()//
+        r_l(&lst);
     if (flag->t)
         ls_sorter(&lst, cmptime, 0);
     else
@@ -36,5 +36,5 @@ void    ls_printer(t_diratr *lst, t_flags_env flag, char *p)
         }
     }
     if (flag->re == 1)
-        recurse(lst, flag)//
+        recurse(lst, flag);
 }

@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wasahmed <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/10 09:10:15 by wasahmed          #+#    #+#              #
-#    Updated: 2019/07/23 11:18:12 by wasahmed         ###   ########.fr        #
+#    Updated: 2019/08/26 13:50:48 by wasahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ft_ls
 
-SRC = main.c check_flags.c
+SRC = main.c checker.c displayl.c exec.c filetype.c l_perms.c ls_basic.c /
+	ls_flag_handler.c ls_printer.c ls_sorter.c r_l.c recurse.c
 
 FLAGS = -Wall -Werror -Wextra
 

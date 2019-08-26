@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 14:23:47 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/24 15:08:20 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 14:08:21 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int     cmpstr(t_diratr dir1, t_diratr dir2)
     return (ft_strcmp(dir1.dir, dir2.dir));
 }
 
-int     cmptime(t_diratr dir1 < t_diratr dir2)
+int     cmptime(t_diratr dir1, t_diratr dir2)
 {
     if (dir1.t < dir2.t)
         return (1);

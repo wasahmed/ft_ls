@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 12:03:45 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/24 15:15:37 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 13:42:36 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void    process_ls(char *dir, t_flags_env *env)
                 p = (t_diratr*)malloc(sizeof(t_diratr));
                 p->dir = env->pnd->d_name;
                 p->fp = ft_strjoin(ft_strjoin(dir, "/"), env->pnd->d_name);
-                lstat(p->fp, &env->stats)
+                lstat(p->fp, &env->stats);
+                p->t = env->stats.st_mtime;
                 if ((S_ISDIR(env->stats.st_mode)) == 1)
                     p->checkdir = 1;
                 else
@@ -39,7 +40,7 @@ void    process_ls(char *dir, t_flags_env *env)
         ls_sorter(&lst, cmpstr, 0);
         ls_printer(lst, env, dir);
     }
-    check_file(env);//
+    check_file(env);
 }
 
 void    exec(t_flags_env *entry)
@@ -49,7 +50,7 @@ void    exec(t_flags_env *entry)
     ls = entry->lst;
     while (ls)
     {
-        process_ls(ls->filename, entry);
+        process_ls(ls->dir, entry);
         ls = ls ->next;
     }
 }

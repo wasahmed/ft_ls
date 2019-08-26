@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 11:01:15 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/24 12:34:17 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 12:46:19 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,19 @@ int       main(int argc, char **argv)
 	entry.lst = NULL;
 	switch_off();
 	while (i < argc)
-	{
+	{	/*if not flag*/
 		if(argv[i][0] != '-' && (new = (t_diratr*)malloc(sizeof(t_diratr))))
 		{
 			new->dir = argv[i];
-			new-> = entry.lst;
+			new->next = entry.lst;
 			entry.lst = new;		
 		}
+		/*if flag*/
 		else if (!check_flags(&entry, argv[i]))
 			return (0);
 		i++;
 	}
+	/*ls alone*/
 	if (entry.lst == NULL)
 		ls_basic(&entry);
 		
