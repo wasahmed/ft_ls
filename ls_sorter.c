@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 14:23:47 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:08:21 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 14:28:28 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void    ls_sorter(t_diratr  **h, int (*cmp)(t_diratr,t_diratr), int done)
 
     while (!done && *h != NULL && ((*h)->next))
     {
-        src = head;
+        src = h;
         tmp = *h;
         next = (*h)->next;
         done = 1;
@@ -46,7 +46,7 @@ void    ls_sorter(t_diratr  **h, int (*cmp)(t_diratr,t_diratr), int done)
                 done = 0;
             }
             src = &tmp->next;
-            temp = next;
+            tmp = next;
             next = next->next;
         }
     }

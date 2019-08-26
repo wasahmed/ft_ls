@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 13:40:04 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 13:42:12 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 14:26:56 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	recurse(t_diratr *list, t_flags_env *e)
 	while (temp != NULL)
 	{
 		if (temp->checkdir == 1 && temp->dir[0] != '.')
-			process_ls(temp->full_path, e);
+			process_ls(temp->fp, e);
 		temp = temp->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 07:33:02 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:14:36 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/26 14:38:49 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void    user_group(struct stat s);
 void    ls_basic(t_flags_env *entry);
 void     switch_off();
 int     check_flags(t_flags_env *f, char *arg);
-void    ls_printer(t_diratr *lst, t_flags_env flag, char *p);
+void    ls_printer(t_diratr *lst, t_flags_env *flag, char *p);
 int     cmpstr(t_diratr dir1, t_diratr dir2);
 int     cmptime(t_diratr dir1, t_diratr dir2);
 void    ls_sorter(t_diratr  **h, int (*cmp)(t_diratr,t_diratr), int done);
