@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 11:01:15 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 12:46:19 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/27 09:22:21 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ int       main(int argc, char **argv)
 	/*ls alone*/
 	if (entry.lst == NULL)
 		ls_basic(&entry);
-		
+	exec(&entry);
 	return (0);
 }

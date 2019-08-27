@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 12:03:45 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:51:14 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/27 11:56:59 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void    process_ls(char *dir, t_flags_env *env)
         ls_sorter(&lst, cmpstr, 0);
         ls_printer(lst, env, dir);
     }
-    check_file(env);
+    //check_file(env);
 }
 
 void    exec(t_flags_env *entry)
