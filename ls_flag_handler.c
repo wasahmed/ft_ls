@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 10:49:23 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/24 11:32:05 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/27 13:34:27 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ int     check_flags(t_flags_env *f, char *arg)
             f->flag_re = 1;
         else
         {
-            ft_putstr(arg);
-            ft_putendl(": Invalid");
+            ft_putstr("ft_ls: illegal option -- ");
+            ft_putendl(&arg[i]);
+            ft_putendl("usage: ft_ls [-Ralrt] [file ...]");
             return (0);
         }
         i++;
