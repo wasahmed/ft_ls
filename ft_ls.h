@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 07:33:02 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/27 12:48:38 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/28 07:36:53 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int     cmptime(t_diratr dir1, t_diratr dir2);
 void    ls_sorter(t_diratr  **h, int (*cmp)(t_diratr,t_diratr), int done);
 void	r_l(t_diratr **head);
 void	recurse(t_diratr *list, t_flags_env *e);
+char    *mod_time(struct stat s);
 
 #endif
