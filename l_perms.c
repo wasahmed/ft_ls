@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 13:08:59 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/27 13:16:37 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/29 12:34:32 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void    l_perms(t_diratr *lst,struct stat s)
     ft_putchar( (s.st_mode & S_IROTH) ? 'r' : '-');
     ft_putchar( (s.st_mode & S_IWOTH) ? 'w' : '-');
     ft_putchar( (s.st_mode & S_IXOTH) ? 'x' : '-');
-    ft_putstr(" ");
+    ft_putstr("   ");
     ft_putnbr(s.st_nlink);
-    ft_putstr(" ");
+    ft_putstr("   ");
 }
 
 void    user_group(struct stat s)
@@ -35,12 +35,9 @@ void    user_group(struct stat s)
     
     o = getpwuid(s.st_uid);
     g = getgrgid(s.st_gid);
-    
-    //if (o == NULL)
-      //  ft_putendl("Hey");
+
     ft_putstr(o->pw_name);
     ft_putstr(" ");
     ft_putstr(g->gr_name);
-    ft_putstr(" ");
-    
+    ft_putstr(" ");    
 }

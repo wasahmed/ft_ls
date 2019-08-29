@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 07:33:02 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/28 07:36:53 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/29 13:34:17 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef	struct	s_flags_env
 
 int		check_file(t_flags_env *e);
 void    display_l(t_diratr  *lst);
-void    process_ls(char *dir, t_flags_env *env);
+void    process_ls(char *dir, t_flags_env *env, struct stat s);
 void    exec(t_flags_env *entry);
 void    file_type(t_diratr *lst, struct stat s);
 void    l_perms(t_diratr *lst, struct stat s);
@@ -66,5 +66,7 @@ void    ls_sorter(t_diratr  **h, int (*cmp)(t_diratr,t_diratr), int done);
 void	r_l(t_diratr **head);
 void	recurse(t_diratr *list, t_flags_env *e);
 char    *mod_time(struct stat s);
+void	blocks(t_diratr *list);
+void    check_link(t_diratr *name, struct stat s);
 
 #endif

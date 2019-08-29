@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 12:56:28 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/28 08:05:22 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/29 13:37:55 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ void    display_l(t_diratr  *lst)
     t_diratr    *list;
     struct stat s;
     char        *b;
-    int         i;
 
-    i = 0;
     list = lst;
     while (list != NULL)
     {
@@ -29,17 +27,12 @@ void    display_l(t_diratr  *lst)
         user_group(s);
         b = ft_itoa(s.st_size);
         ft_putstr(b);
-        if(ft_strlen(b) < 5)
-        {
-            while (i++ < (5 - ft_strlen(b)))
-            {
-                ft_putstr(" ");
-            }
-        }
-        ft_putstr(" ");
+        ft_putstr("   ");
         ft_putstr(mod_time(s));
-        ft_putstr(" ");
+        ft_putstr("   ");
         ft_putstr(list->dir);
+        ft_putstr((S_ISLNK(s.st_mode)) ? "  ->  " : 0);
+        check_link(list, s);
         list = list->next;
         if (list != NULL)
 			ft_putchar('\n');

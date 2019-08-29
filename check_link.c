@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   recurse.c                                          :+:      :+:    :+:   */
+/*   check_link.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/26 13:40:04 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:26:56 by wasahmed         ###   ########.fr       */
+/*   Created: 2019/08/29 13:25:24 by wasahmed          #+#    #+#             */
+/*   Updated: 2019/08/29 13:46:33 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	recurse(t_diratr *list, t_flags_env *e)
+void    check_link(t_diratr *name, struct stat s)
 {
-	t_diratr 	*temp;
-	char		*find;
+    int     i;
+    char    buff[1000];
 
-	temp = list;
-	while (temp != NULL)
-	{
-		find = ft_strrchr(temp->fp, '/');
-		if (temp->checkdir == 1 && !(ft_strequ(find, "/."))
-		&& !(ft_strequ(find, "/..")))
-			process_ls(temp->fp, e, e->stats);
-		temp = temp->next;
-	}
+    i = 0;
+    if (S_ISLNK(s.st_mode))
+    {
+        if (readlink(name->fp, buff, sizeof(buff)) != -1)
+        ft_putstr(buff);    
+    }
 }

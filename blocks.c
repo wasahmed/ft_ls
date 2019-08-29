@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   recurse.c                                          :+:      :+:    :+:   */
+/*   blocks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/26 13:40:04 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:26:56 by wasahmed         ###   ########.fr       */
+/*   Created: 2019/08/29 12:11:01 by wasahmed          #+#    #+#             */
+/*   Updated: 2019/08/29 12:16:05 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	recurse(t_diratr *list, t_flags_env *e)
+void	blocks(t_diratr *list)
 {
-	t_diratr 	*temp;
-	char		*find;
+	struct stat	s;
+	int			total;
 
-	temp = list;
-	while (temp != NULL)
+	total = 0;
+	while(list)
 	{
-		find = ft_strrchr(temp->fp, '/');
-		if (temp->checkdir == 1 && !(ft_strequ(find, "/."))
-		&& !(ft_strequ(find, "/..")))
-			process_ls(temp->fp, e, e->stats);
-		temp = temp->next;
+		lstat(list->fp, &s);
+		total = total + s.st_blocks;
+		list = list->next;
 	}
+	ft_putstr("total ");
+	ft_putnbr(total);
+	ft_putchar('\n');
 }

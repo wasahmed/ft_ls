@@ -12,7 +12,7 @@
 
 #include "ft_ls.h"
 
-void    process_ls(char *dir, t_flags_env *env)
+void    process_ls(char *dir, t_flags_env *env, struct stat s)
 {
     t_diratr    *lst;
     t_diratr    *p;
@@ -25,8 +25,8 @@ void    process_ls(char *dir, t_flags_env *env)
             if (env->pnd->d_name[0] != '.' || env->flag_a == 1)
             {
                 p = (t_diratr*)malloc(sizeof(t_diratr));
-                p->dir = env->pnd->d_name;
-                p->fp = ft_strjoin(ft_strjoin(dir, "/"), env->pnd->d_name);
+                p->dir = ft_strdup(env->pnd->d_name);
+                p->fp = ft_strjoin(ft_strjoin(dir, "/"), p->dir);
                 lstat(p->fp, &env->stats);
                 p->t = env->stats.st_mtime;
                 if ((S_ISDIR(env->stats.st_mode)) == 1)
@@ -46,11 +46,13 @@ void    process_ls(char *dir, t_flags_env *env)
 void    exec(t_flags_env *entry)
 {
     t_diratr    *ls;
+    struct stat s;
 
+    ft_memset(&s, 0, sizeof(struct stat));
     ls = entry->lst;
     while (ls)
     {
-        process_ls(ls->dir, entry);
+        process_ls(ls->dir, entry, s);
         ls = ls ->next;
     }
 }
