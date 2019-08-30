@@ -6,13 +6,13 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 13:08:59 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/30 15:16:05 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/30 18:54:52 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	l_perms(t_diratr *lst, struct stat s)
+void	l_perms(struct stat s)
 {
 	ft_putchar((s.st_mode & S_IRUSR) ? 'r' : '-');
 	ft_putchar((s.st_mode & S_IWUSR) ? 'w' : '-');

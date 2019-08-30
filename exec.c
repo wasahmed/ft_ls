@@ -6,13 +6,13 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 12:03:45 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/30 18:46:05 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/30 18:57:16 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-void	process_ls(char *dir, t_flags_env *env, struct stat s)
+void	process_ls(char *dir, t_flags_env *env)
 {
 	t_diratr	*lst;
 	t_diratr	*p;
@@ -50,7 +50,7 @@ void	exec(t_flags_env *entry)
 	ls = entry->lst;
 	while (ls)
 	{
-		process_ls(ls->dir, entry, s);
+		process_ls(ls->dir, entry);
 		ls = ls->next;
 	}
 }

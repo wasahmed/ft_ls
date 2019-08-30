@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 07:33:02 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/30 18:43:02 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/30 18:55:09 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ typedef	struct		s_flags_env
 
 int					check(t_flags_env *e);
 void				display_l(t_diratr *lst);
-void				process_ls(char *dir, t_flags_env *env, struct stat s);
+void				process_ls(char *dir, t_flags_env *env);
 void				exec(t_flags_env *entry);
-void				file_type(t_diratr *lst, struct stat s);
-void				l_perms(t_diratr *lst, struct stat s);
+void				file_type(struct stat s);
+void				l_perms(struct stat s);
 void				user_group(struct stat s);
 void				ls_basic(t_flags_env *entry);
 void				switch_off();
