@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 13:40:04 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:26:56 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/30 18:21:45 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	recurse(t_diratr *list, t_flags_env *e)
 {
-	t_diratr 	*temp;
+	t_diratr	*temp;
 	char		*find;
 
 	temp = list;

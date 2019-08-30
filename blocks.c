@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/29 12:11:01 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/29 12:16:05 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/30 12:09:38 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	blocks(t_diratr *list)
 	int			total;
 
 	total = 0;
-	while(list)
+	while (list)
 	{
 		lstat(list->fp, &s);
 		total = total + s.st_blocks;

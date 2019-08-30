@@ -6,13 +6,13 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 13:43:04 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/26 14:52:43 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/30 11:51:42 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int		check_file(t_flags_env *e)
+int		check(t_flags_env *e)
 {
 	if ((e->stream = opendir(".")) != NULL)
 	{
@@ -23,7 +23,7 @@ int		check_file(t_flags_env *e)
 				ft_strcmp(e->pnd->d_name, e->lst->dir) == 0)
 			{
 				ft_putendl(e->pnd->d_name);
-				return (1);
+				return (-1);
 			}
 			else if (!ft_strcmp(e->pnd->d_name, e->lst->dir))
 			{
