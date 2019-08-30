@@ -6,7 +6,7 @@
 #    By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/10 09:10:15 by wasahmed          #+#    #+#              #
-#    Updated: 2019/08/30 19:08:34 by wasahmed         ###   ########.fr        #
+#    Updated: 2019/08/30 19:09:38 by wasahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,3 +47,6 @@ git:
 	git add -A
 	git commit -m "progress"
 	git push origin master
+	git status
+	git log
+	@echo "ADDED TO GITHUB"
