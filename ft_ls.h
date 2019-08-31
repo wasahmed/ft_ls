@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/08 07:33:02 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/30 18:55:09 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/31 10:12:00 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,8 @@ void				recurse(t_diratr *list, t_flags_env *e);
 char				*mod_time(struct stat s);
 void				blocks(t_diratr *list);
 void				check_link(t_diratr *name, struct stat s);
+t_diratr			*populate(char *dir, t_flags_env *env);
+void				free_dir_list(t_diratr **dlist);
+char				*join(char *p1, char*time);
 
 #endif

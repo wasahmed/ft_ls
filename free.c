@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/08 10:53:57 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/31 07:32:46 by wasahmed         ###   ########.fr       */
+/*   Created: 2019/08/31 06:40:34 by wasahmed          #+#    #+#             */
+/*   Updated: 2019/08/31 08:52:54 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ls.h"
 
-void	ft_memdel(void **ap)
+void	free_dir_list(t_diratr **dlist)
 {
-	if (ap)
+	t_diratr *ptr;
+
+	ptr = NULL;
+	if ((dlist && *dlist))
 	{
-		free(*ap);
-		*ap = NULL;
+		ptr = (*dlist);
+		while (ptr)
+		{
+			(*dlist) = (*dlist)->next;
+			ptr->next = NULL;
+			ft_memdel((void*)&ptr->dir);
+			ft_memdel((void*)&ptr->fp);
+			ft_memdel((void*)&ptr);
+			ptr = (*dlist);
+		}
 	}
+	return ;
 }

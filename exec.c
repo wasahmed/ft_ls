@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 12:03:45 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/30 18:57:16 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/31 09:01:21 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	process_ls(char *dir, t_flags_env *env)
 {
 	t_diratr	*lst;
-	t_diratr	*p;
+	t_diratr	*lstp;
 
 	lst = NULL;
 	if ((env->stream = opendir(dir)) != NULL)
@@ -24,18 +24,14 @@ void	process_ls(char *dir, t_flags_env *env)
 		{
 			if (env->pnd->d_name[0] != '.' || env->flag_a == 1)
 			{
-				p = (t_diratr*)malloc(sizeof(t_diratr));
-				p->dir = ft_strdup(env->pnd->d_name);
-				p->fp = ft_strjoin(ft_strjoin(dir, "/"), p->dir);
-				lstat(p->fp, &env->stats);
-				p->t = env->stats.st_mtime;
-				(S_ISDIR(env->stats.st_mode) == 1) ? p->checkdir = 1 : 0;
-				p->next = lst;
-				lst = p;
+				lstp = populate(dir, env);
+				lstp->next = lst;
+				lst = lstp;
 			}
 		}
 		ls_sorter(&lst, cmpstr, 0);
 		ls_printer(lst, env, dir, lst);
+		free_dir_list(&lst);
 		return ;
 	}
 	check(env);
@@ -43,14 +39,12 @@ void	process_ls(char *dir, t_flags_env *env)
 
 void	exec(t_flags_env *entry)
 {
-	t_diratr	*ls;
-	struct stat s;
+	t_diratr	*lstp;
 
-	ft_memset(&s, 0, sizeof(struct stat));
-	ls = entry->lst;
-	while (ls)
+	lstp = entry->lst;
+	while (lstp)
 	{
-		process_ls(ls->dir, entry);
-		ls = ls->next;
+		process_ls(lstp->dir, entry);
+		lstp = lstp->next;
 	}
 }

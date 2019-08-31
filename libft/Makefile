@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wasahmed <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 09:59:09 by wasahmed          #+#    #+#              #
-#    Updated: 2019/07/10 09:37:26 by wasahmed         ###   ########.fr        #
+#    Updated: 2019/08/31 06:49:24 by wasahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ ft_isalnum.c	ft_memccpy.c	ft_putchar.c	ft_putstr_fd.c	ft_strdup.c	ft_strmap.c	ft
 ft_isalpha.c	ft_memchr.c	ft_putchar_fd.c	ft_strcat.c	ft_strequ.c	ft_strmapi.c	ft_strrchr.c	\
 ft_isascii.c	ft_memcmp.c	ft_putendl.c	ft_strchr.c	ft_striter.c	ft_strncat.c	ft_strsplit.c\
 ft_isdigit.c	ft_memcpy.c	ft_putendl_fd.c	ft_strclr.c	ft_striteri.c	ft_strncmp.c	ft_strstr.c\
-ft_isprint.c	ft_memdel.c	ft_putnbr.c	ft_strcmp.c	ft_strjoin.c	ft_strncpy.c	ft_strsub.c
+ft_isprint.c	ft_memdel.c	ft_putnbr.c	ft_strcmp.c	ft_strjoin.c	ft_strncpy.c	ft_strsub.c \
+
 
 OBJ_NAME = ft_atoi.o	ft_itoa.o	ft_memmove.o	ft_putnbr_fd.o	ft_strcpy.o	ft_strlcat.o	ft_strnequ.o	ft_strtrim.o\
 ft_bzero.o	ft_memalloc.o	ft_memset.o	ft_putstr.o	ft_strdel.o	ft_strlen.o	ft_strnew.o	ft_tolower.o\
