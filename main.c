@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 11:01:15 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/31 10:32:54 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/31 10:40:49 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int		main(int argc, char **argv)
 	if (!entry.lst)
 		ls_basic(&entry);
 	exec(&entry);
-	sleep (60);
 	return (0);
 }

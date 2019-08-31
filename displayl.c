@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/26 12:56:28 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/31 10:21:58 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/31 10:45:54 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	display_l(t_diratr *lst)
 	list = lst;
 	while (list != NULL)
 	{
-		tmp = mod_time(s);
 		lstat(list->fp, &s);
 		file_type(s);
 		l_perms(s);
@@ -31,15 +30,13 @@ void	display_l(t_diratr *lst)
 		ft_putstr(b);
 		ft_memdel((void*)&b);
 		ft_putstr("   ");
-		ft_putstr(tmp);
+		ft_putstr(tmp = mod_time(s));
 		ft_memdel((void*)&tmp);
 		ft_putstr("   ");
 		ft_putstr(list->dir);
 		ft_putstr((S_ISLNK(s.st_mode)) ? "  ->  " : 0);
 		check_link(list, s);
 		list = list->next;
-
-		if (list != NULL)
-			ft_putchar('\n');
+		list != NULL ? ft_putchar('\n') : exit(0);
 	}
 }

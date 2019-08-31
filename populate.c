@@ -6,7 +6,7 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/30 23:37:15 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/31 10:06:03 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/08/31 10:40:02 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ t_diratr	*populate(char *dir, t_flags_env *env)
 	(S_ISDIR(env->stats.st_mode) == 1) ? pop->checkdir = 1 : 0;
 	free(str);
 	str = NULL;
-	//free(pop->dir);
 	return (pop);
 }
