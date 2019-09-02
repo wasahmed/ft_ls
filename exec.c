@@ -6,11 +6,16 @@
 /*   By: wasahmed <wasahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/24 12:03:45 by wasahmed          #+#    #+#             */
-/*   Updated: 2019/08/31 09:01:21 by wasahmed         ###   ########.fr       */
+/*   Updated: 2019/09/02 11:59:19 by wasahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
+
+/* use opendir to get the directory stream									*/
+/* readdir return a dirent pointer which allows us to access the attributes */
+/* of the struct dirent. E.g d_name which gives us the name of the file or  */
+/* directory that is being pointed to										*/
 
 void	process_ls(char *dir, t_flags_env *env)
 {
