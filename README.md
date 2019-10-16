@@ -12,3 +12,13 @@ Handles the following flags:
    -> -R : lists recursively
    
    -> -t : sorts lists according to time of last modification
+
+CONCEPTS COVERED:
+
+   ->Basic parsing.
+   
+   ->Data structures.
+   
+   ->Linked Lists
+   
+   ->Memory management
